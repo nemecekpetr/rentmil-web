@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reklamace | Bazény Rentmil</title>
+    <meta name="description" content="Reklamační řád a formulář pro uplatnění reklamace vady předmětu koupě u společnosti Rentmil s.r.o.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <a href="/bazenove-sety" class="top-bar-link">
+                <span class="top-bar-arrow">&lsaquo;</span>
+                <span class="top-bar-text"><strong>Podzimní slevy!</strong> Až 24 000 Kč na bazénové sety.</span>
+                <span class="top-bar-arrow">&rsaquo;</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="logo rentmil.png" alt="Rentmil - Bazénový mistr" width="140" height="50">
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="bazenove-sety.html" class="nav-link">Bazénové sety</a></li>
+                    <li class="nav-item"><a href="bazeny.html" class="nav-link">Bazény</a></li>
+                    <li class="nav-item"><a href="katalog/zastreseni-bazenu.html" class="nav-link">Zastřešení bazénů</a></li>
+                    <li class="nav-item"><a href="radime-vam.html" class="nav-link">Radíme vám</a></li>
+                    <li class="nav-item"><a href="reference.html" class="nav-link">Reference</a></li>
+                    <li class="nav-item"><a href="kontakty.html" class="nav-link">Kontakt</a></li>
+                </ul>
+                <a href="poptavka.html" class="btn btn-primary nav-cta-desktop">Nezávazná poptávka</a>
+
+                <!-- Mobilní ikony -->
+                <div class="nav-mobile-icons">
+                    <a href="https://nemecekpetr.github.io/rentmil-konfigurator/" class="nav-mobile-icon nav-mobile-icon-konfigurator" aria-label="Konfigurátor bazénů" target="_blank">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                    </a>
+                    <a href="poptavka.html" class="nav-mobile-icon nav-mobile-icon-poptavka" aria-label="Nezávazná poptávka">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Úvod</a>
+            <span class="separator">&rsaquo;</span>
+            <span class="current">Reklamace</span>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Reklamace vady <span class="text-gradient">předmětu koupě</span></h1>
+            <p class="page-subtitle">Postup pro uplatnění reklamace u společnosti Rentmil s.r.o.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-main">
+                    <section class="content-section">
+                        <div class="info-card info-card-highlight">
+                            <div class="info-card-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                </svg>
+                            </div>
+                            <div class="info-card-content">
+                                <h3>Reklamační protokol ke stažení</h3>
+                                <p>Pro uplatnění reklamace vyplňte a zašlete reklamační protokol.</p>
+                                <a href="documents/reklamacni-protokol.pdf" class="btn btn-primary" download>Stáhnout protokol (PDF)</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="content-section">
+                        <h2>Prodávající</h2>
+                        <div class="legal-info">
+                            <p><strong>Rentmil s.r.o.</strong></p>
+                            <p>IČO: 263 42 910</p>
+                            <p>Sídlem: Lidická 1233/26, Severní Předměstí, 323 00 Plzeň</p>
+                            <p>Zapsaná: v OR vedeném u Krajského soudu v Plzni, oddíl C, vložka 14188</p>
+                            <p>Web: <a href="index.html">www.rentmil.cz</a></p>
+                            <p>Email: <a href="mailto:bazeny@rentmil.cz">bazeny@rentmil.cz</a></p>
+                        </div>
+                    </section>
+
+                    <section class="content-section">
+                        <h2>Postup při reklamaci</h2>
+
+                        <div class="steps-list">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Stáhněte a vyplňte reklamační protokol</h3>
+                                    <p>Uveďte všechny potřebné údaje včetně čísla kupní smlouvy (objednávky) a data převzetí předmětu koupě.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Popište závadu</h3>
+                                    <p>Detailně popište zjištěnou vadu - co se děje, jak se projevuje a kdy jste ji zjistili.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Uveďte požadovaný způsob vyřízení</h3>
+                                    <p>Požadovaný způsob vyřízení reklamace se řídí podmínkami kupní smlouvy a Obchodními podmínkami Prodávajícího.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h3>Přiložte kopii předávacího protokolu</h3>
+                                    <p>K reklamačnímu protokolu přiložte kopii předávacího protokolu ze dne převzetí předmětu koupě.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h3>Zašlete podepsaný protokol</h3>
+                                    <p>Vyplněný a vlastnoručně podepsaný protokol zašlete na email <a href="mailto:bazeny@rentmil.cz">bazeny@rentmil.cz</a> nebo poštou na naši adresu.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="content-section">
+                        <h2>Důležité informace</h2>
+                        <div class="info-box">
+                            <p>Reklamaci vad Předmětu koupě upravuje zejména článek 7 Obchodních podmínek Prodávajícího, které jsou veřejně dostupné na adrese <a href="obchodni-podminky.html">www.rentmil.cz/obchodni-podminky</a>.</p>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="content-sidebar">
+                    <div class="sidebar-card sidebar-card-highlight">
+                        <div class="sidebar-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF8621" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <h3>Potřebujete poradit?</h3>
+                        <p>Zavolejte nám a pomůžeme vám s reklamací.</p>
+                        <a href="tel:+420737222004" class="sidebar-phone">+420 737 222 004</a>
+                        <a href="tel:+420601588453" class="sidebar-phone">+420 601 588 453</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Servisní oddělení</h3>
+                        <p><strong>Kontakt na servis:</strong></p>
+                        <p><a href="tel:+420608702759">+420 608 702 759</a></p>
+                        <p><a href="mailto:servis@rentmil.cz">servis@rentmil.cz</a></p>
+                    </div>
+
+                    <div class="sidebar-card sidebar-card-dark">
+                        <h3>Navštivte nás</h3>
+                        <p><strong>Showroom Plzeň</strong></p>
+                        <p>Lidická 1233/26<br>323 00 Plzeň</p>
+                        <p><strong>po-pá:</strong> 8:00 - 16:30</p>
+                        <a href="https://goo.gl/maps/341GNk8VZNt" target="_blank" class="btn btn-secondary">Zobrazit na mapě</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-showroom">
+                    <span class="footer-label">Showroom</span>
+                    <h4>Prohlédněte si naše bazény <span class="text-gradient">v klidu</span></h4>
+                    <div class="footer-address">
+                        <strong>Adresa</strong>
+                        <p>Lidická 1233/26<br>Plzeň - Severní předměstí<br>323 00</p>
+                    </div>
+                    <div class="footer-hours">
+                        <strong>Otevírací doba</strong>
+                        <p>po-pá 8:00 - 16:30</p>
+                    </div>
+                </div>
+                <div class="footer-column footer-links">
+                    <span class="footer-label">Informace</span>
+                    <h4>Důležité odkazy</h4>
+                    <ul class="footer-nav">
+                        <li><a href="o-nas.html">O nás</a></li>
+                        <li><a href="navody.html">Návody k výrobkům</a></li>
+                        <li><a href="reklamace.html">Reklamace</a></li>
+                        <li><a href="obchodni-podminky.html">Obchodní podmínky</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-newsletter">
+                    <span class="footer-label">Newsletter</span>
+                    <h4>Čtěte naše novinky</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Zadejte váš e-mail" required>
+                        <button type="submit" class="btn btn-primary">Odeslat</button>
+                    </form>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/bazenyrentmil" target="_blank" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/bazenyrentmil/" target="_blank" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Rentmil s.r.o. Všechna práva vyhrazena.</p>
+                <nav class="footer-bottom-nav">
+                    <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
+                    <a href="cookies.html">Správa cookies</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

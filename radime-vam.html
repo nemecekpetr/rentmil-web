@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radíme vám | Bazény Rentmil</title>
+    <meta name="description" content="Nevíte si se svým bazénem rady? Přihlaste se k odběru našich rad a tipů a budete mít po starostech. Veškeré informace na jednom místě.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <a href="/bazenove-sety" class="top-bar-link">
+                <span class="top-bar-arrow">&lsaquo;</span>
+                <span class="top-bar-text"><strong>Podzimní slevy!</strong> Až 24 000 Kč na bazénové sety.</span>
+                <span class="top-bar-arrow">&rsaquo;</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="logo rentmil.png" alt="Rentmil - Bazénový mistr" width="140" height="50">
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="bazenove-sety.html" class="nav-link">Bazénové sety</a></li>
+                    <li class="nav-item"><a href="bazeny.html" class="nav-link">Bazény</a></li>
+                    <li class="nav-item"><a href="katalog/zastreseni-bazenu.html" class="nav-link">Zastřešení bazénů</a></li>
+                    <li class="nav-item"><a href="radime-vam.html" class="nav-link active">Radíme vám</a></li>
+                    <li class="nav-item"><a href="reference.html" class="nav-link">Reference</a></li>
+                    <li class="nav-item"><a href="kontakty.html" class="nav-link">Kontakt</a></li>
+                </ul>
+                <a href="poptavka.html" class="btn btn-primary nav-cta-desktop">Nezávazná poptávka</a>
+
+                <!-- Mobilní ikony -->
+                <div class="nav-mobile-icons">
+                    <a href="https://nemecekpetr.github.io/rentmil-konfigurator/" class="nav-mobile-icon nav-mobile-icon-konfigurator" aria-label="Konfigurátor bazénů" target="_blank">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                    </a>
+                    <a href="poptavka.html" class="nav-mobile-icon nav-mobile-icon-poptavka" aria-label="Nezávazná poptávka">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Úvod</a>
+            <span class="separator">&rsaquo;</span>
+            <span class="current">Radíme vám</span>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Radíme vám</h1>
+            <p class="page-subtitle">Tipy, rady a inspirace pro váš bazén. Vše na jednom místě.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Tags/Categories -->
+            <div class="blog-tags">
+                <span class="tags-label">Kategorie:</span>
+                <a href="#" class="tag-link active">Vše</a>
+                <a href="#" class="tag-link">Jak vybrat...</a>
+                <a href="#" class="tag-link">Kupujeme bazén</a>
+                <a href="#" class="tag-link">Příslušenství</a>
+                <a href="#" class="tag-link">Trendy</a>
+                <a href="#" class="tag-link">Údržba bazénu</a>
+            </div>
+
+            <!-- Articles Grid -->
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/article-podzim.jpg" alt="Realizace bazénu na podzim" loading="lazy">
+                        <span class="article-tag">Trendy</span>
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="radime-vam/4-duvody-proc-realizovat-bazen-na-podzim.html">4 důvody, proč realizovat bazén na podzim</a></h2>
+                        <p>Léto už je pomalu ve své druhé polovině, ale to neznamená, že byste měli přestat přemýšlet o svém vysněném bazénu. Naopak. Podzim je ideálním obdobím pro realizaci.</p>
+                        <div class="article-meta">
+                            <span class="article-date">14. 8. 2024</span>
+                            <a href="radime-vam/4-duvody-proc-realizovat-bazen-na-podzim.html" class="article-more">Číst více</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/article-zazimovani.jpg" alt="Zazimování bazénu" loading="lazy">
+                        <span class="article-tag">Údržba bazénu</span>
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="radime-vam/jak-zazimovat-bazen.html">Jak zazimovat bazén?</a></h2>
+                        <p>Jak zazimovat bazén? A kdy zazimovat bazén? To jsou otázky, které majitele bazénů začnou trápit hned, jak se trochu ochladí. Správný čas na zazimování je v době, kdy v noci ještě nemrzne.</p>
+                        <div class="article-meta">
+                            <span class="article-date">25. 9. 2017</span>
+                            <a href="radime-vam/jak-zazimovat-bazen.html" class="article-more">Číst více</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/article-pisek.jpg" alt="Výměna písku ve filtraci" loading="lazy">
+                        <span class="article-tag">Příslušenství</span>
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="radime-vam/vymena-pisku-ve-filtraci.html">Výměna písku ve filtraci: Kdy, jak a proč ji dělat?</a></h2>
+                        <p>Písková filtrace patří mezi nejefektivnější způsoby, jak udržet vodu v bazénu čistou a průzračnou po celé léto. Aby ale fungovala tak, jak má, potřebuje pravidelnou údržbu.</p>
+                        <div class="article-meta">
+                            <span class="article-date">23. 7. 2025</span>
+                            <a href="radime-vam/vymena-pisku-ve-filtraci.html" class="article-more">Číst více</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/article-alkalita.jpg" alt="Alkalita vody v bazénu" loading="lazy">
+                        <span class="article-tag">Údržba bazénu</span>
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="radime-vam/idealni-alkalita-vody.html">Jaká je ideální alkalita vody v bazénu?</a></h2>
+                        <p>Voda v bazénu může na první pohled vypadat čistě, ale pokud nemá správné složení, z idylky u vody se stává problém – podrážděná pokožka, kolísavé pH nebo nefungující bazénová chemie.</p>
+                        <div class="article-meta">
+                            <span class="article-date">23. 7. 2025</span>
+                            <a href="radime-vam/idealni-alkalita-vody.html" class="article-more">Číst více</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/article-mlecna-voda.jpg" alt="Mléčná voda v bazénu" loading="lazy">
+                        <span class="article-tag">Údržba bazénu</span>
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="radime-vam/mlecna-voda-v-bazenu.html">Trápí vás mléčná voda v bazénu?</a></h2>
+                        <p>Chystali jste se v parném dni osvěžit, ale voda v bazénu je mléčná? Mléčný zákal v bazénu patří mezi nejčastější problémy, se kterými se během sezóny můžete potýkat.</p>
+                        <div class="article-meta">
+                            <span class="article-date">23. 7. 2025</span>
+                            <a href="radime-vam/mlecna-voda-v-bazenu.html" class="article-more">Číst více</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/article-tepelne-cerpadlo.jpg" alt="Tepelné čerpadlo k bazénu" loading="lazy">
+                        <span class="article-tag">Jak vybrat...</span>
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="radime-vam/jak-vybrat-tepelne-cerpadlo.html">Jak vybrat tepelné čerpadlo pro bazén?</a></h2>
+                        <p>Chcete si užít příjemně teplou vodu v bazénu i mimo horké letní dny? Pak vám přijde vhod šikovný pomocník – tepelné čerpadlo k bazénu.</p>
+                        <div class="article-meta">
+                            <span class="article-date">1. 7. 2025</span>
+                            <a href="radime-vam/jak-vybrat-tepelne-cerpadlo.html" class="article-more">Číst více</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/article-udrzba.jpg" alt="Údržba bazénu" loading="lazy">
+                        <span class="article-tag">Údržba bazénu</span>
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="radime-vam/udrzba-bazenu-jak-na-to.html">Údržba bazénu: Jak na to?</a></h2>
+                        <p>Vlastní bazén na zahradě je skvělý způsob, jak si užívat teplé dny naplno. Aby ale byla voda v bazénu vždy křišťálově čistá a bezpečná ke koupání, je potřeba pravidelná péče.</p>
+                        <div class="article-meta">
+                            <span class="article-date">21. 8. 2017</span>
+                            <a href="radime-vam/udrzba-bazenu-jak-na-to.html" class="article-more">Číst více</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/article-filtrace.jpg" alt="Filtrace bazénu" loading="lazy">
+                        <span class="article-tag">Údržba bazénu</span>
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="radime-vam/jak-spravne-filtrovat-bazen.html">Jak správně a jak často filtrovat bazén?</a></h2>
+                        <p>Správné filtrování bazénové vody je základem pro pohodové koupání. Filtrace pomáhá odstraňovat nečistoty, zabraňuje množení bakterií a řas.</p>
+                        <div class="article-meta">
+                            <span class="article-date">5. 6. 2025</span>
+                            <a href="radime-vam/jak-spravne-filtrovat-bazen.html" class="article-more">Číst více</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/article-stavba.jpg" alt="Stavba bazénu" loading="lazy">
+                        <span class="article-tag">Kupujeme bazén</span>
+                    </div>
+                    <div class="article-content">
+                        <h2><a href="radime-vam/krok-za-krokem-stavime-bazen.html">KROK ZA KROKEM: Stavíme nový bazén</a></h2>
+                        <p>Chystáte se na stavbu bazénu svépomocí a lámete si hlavu nad tím, jak si bazén vlastně postavit, kde začít a co vše budete potřebovat?</p>
+                        <div class="article-meta">
+                            <span class="article-date">27. 10. 2014</span>
+                            <a href="radime-vam/krok-za-krokem-stavime-bazen.html" class="article-more">Číst více</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <span class="pagination-current">1</span>
+                <a href="#" class="pagination-link">2</a>
+                <a href="#" class="pagination-link">3</a>
+                <a href="#" class="pagination-link">4</a>
+                <a href="#" class="pagination-link">5</a>
+                <a href="#" class="pagination-next">Další &rarr;</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Potřebujete poradit? <span class="text-gradient">Jsme tu pro vás.</span></h2>
+                <p>Zavolejte nám nebo nás navštivte v našem showroomu v Plzni.</p>
+                <a href="kontakty.html" class="btn btn-primary btn-large">Kontaktovat nás</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-showroom">
+                    <span class="footer-label">Showroom</span>
+                    <h4>Prohlédněte si naše bazény <span class="text-gradient">v klidu</span></h4>
+                    <div class="footer-address">
+                        <strong>Adresa</strong>
+                        <p>Lidická 1233/26<br>Plzeň - Severní předměstí<br>323 00</p>
+                    </div>
+                    <div class="footer-hours">
+                        <strong>Otevírací doba</strong>
+                        <p>po-pá 8:00 - 16:30</p>
+                    </div>
+                </div>
+                <div class="footer-column footer-links">
+                    <span class="footer-label">Informace</span>
+                    <h4>Důležité odkazy</h4>
+                    <ul class="footer-nav">
+                        <li><a href="o-nas.html">O nás</a></li>
+                        <li><a href="navody.html">Návody k výrobkům</a></li>
+                        <li><a href="reklamace.html">Reklamace</a></li>
+                        <li><a href="obchodni-podminky.html">Obchodní podmínky</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-newsletter">
+                    <span class="footer-label">Newsletter</span>
+                    <h4>Čtěte naše novinky</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Zadejte váš e-mail" required>
+                        <button type="submit" class="btn btn-primary">Odeslat</button>
+                    </form>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/bazenyrentmil" target="_blank" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/bazenyrentmil/" target="_blank" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Rentmil s.r.o. Všechna práva vyhrazena.</p>
+                <nav class="footer-bottom-nav">
+                    <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
+                    <a href="cookies.html">Správa cookies</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
