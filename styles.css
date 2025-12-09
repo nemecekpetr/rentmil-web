@@ -900,6 +900,59 @@ h4 {
     font-size: var(--text-sm);
 }
 
+/* Hero Review Overlay - na obrázku bazénového mistra */
+.hero-review-overlay {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-review-laurel {
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.hero-review-laurel svg {
+    display: block;
+    width: 24px;
+    height: 48px;
+}
+
+.hero-review-content {
+    text-align: center;
+}
+
+.hero-review-stars {
+    color: #FBBC05;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.25rem;
+}
+
+.hero-review-text {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-gray-800);
+    margin: 0 0 0.25rem 0;
+    font-style: italic;
+}
+
+.hero-review-author {
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--color-gray-500);
+}
+
 /* ==========================================================================
    Product Navigator / Rozcestník (Bento Grid)
    ========================================================================== */
