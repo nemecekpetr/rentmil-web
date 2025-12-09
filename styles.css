@@ -430,6 +430,28 @@ h4 {
     min-width: 500px;
 }
 
+/* Megamenu Zastřešení - kompaktní 2-sloupcový layout */
+.megamenu-zastreseni {
+    min-width: 480px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.megamenu-zastreseni .megamenu-container {
+    padding: 1.75rem;
+}
+
+.megamenu-2cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.megamenu-zastreseni .megamenu-footer {
+    margin: 1.5rem -1.75rem -1.75rem -1.75rem;
+    padding: 1rem 1.5rem;
+    justify-content: center;
+}
+
 .nav-item.has-megamenu:hover .megamenu {
     opacity: 1;
     visibility: visible;
