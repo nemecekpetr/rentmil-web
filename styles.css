@@ -1172,6 +1172,167 @@ h4 {
 }
 
 /* ==========================================================================
+   Product Navigator - Photo Variant (overlay popisky přes fotografie)
+   ========================================================================== */
+
+.navigator-photos .navigator-grid {
+    min-height: 380px;
+    gap: 0.5rem;
+}
+
+.navigator-photos .navigator-card {
+    position: relative;
+    border: none;
+    background: transparent;
+}
+
+.navigator-photos .navigator-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
+    border-radius: var(--radius-2xl);
+    pointer-events: none;
+    transition: background 0.3s ease;
+}
+
+.navigator-photos .navigator-card:hover::after {
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.15) 100%);
+}
+
+.navigator-photos .navigator-image {
+    position: absolute;
+    inset: 0;
+    padding: 0;
+    min-height: 0;
+    background: transparent;
+}
+
+.navigator-photos .navigator-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-2xl);
+}
+
+.navigator-photos .navigator-card:hover .navigator-image img {
+    transform: scale(1.05);
+}
+
+.navigator-photos .navigator-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.25rem;
+    background: transparent;
+    z-index: 2;
+}
+
+.navigator-photos .navigator-card-main .navigator-content {
+    padding: 1.5rem;
+}
+
+.navigator-photos .navigator-content h3 {
+    color: var(--color-white);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.navigator-photos .navigator-content p {
+    color: rgba(255,255,255,0.85);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.navigator-photos .navigator-cta {
+    color: var(--color-white);
+    background: var(--color-primary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+}
+
+.navigator-photos .navigator-card:hover .navigator-cta {
+    background: var(--color-primary-hover);
+    color: var(--color-white);
+}
+
+.navigator-photos .navigator-arrow {
+    background: rgba(255,255,255,0.2);
+    color: var(--color-white);
+    backdrop-filter: blur(4px);
+}
+
+.navigator-photos .navigator-card:hover .navigator-arrow {
+    background: var(--color-primary);
+}
+
+.navigator-photos .navigator-badge {
+    top: 1rem;
+    left: 1rem;
+}
+
+/* Photo variant - Top card horizontal layout */
+.navigator-photos .navigator-card-top {
+    flex-direction: column;
+}
+
+.navigator-photos .navigator-card-top .navigator-content {
+    width: 100%;
+}
+
+.navigator-photos .navigator-card-top .navigator-image {
+    flex: none;
+}
+
+/* Photo variant - Small cards */
+.navigator-photos .navigator-card-small .navigator-content {
+    padding-right: 3.5rem;
+}
+
+.navigator-photos .navigator-card-small .navigator-content h3 {
+    font-size: var(--text-base);
+}
+
+.navigator-photos .navigator-card-small .navigator-content p {
+    display: none;
+}
+
+/* Responsive pro photo variant */
+@media (max-width: 768px) {
+    .navigator-photos .navigator-grid {
+        min-height: auto;
+    }
+
+    .navigator-photos .navigator-card-main {
+        min-height: 200px;
+    }
+
+    .navigator-photos .navigator-card-top {
+        min-height: 160px;
+    }
+
+    .navigator-photos .navigator-card-small {
+        min-height: 140px;
+    }
+
+    .navigator-photos .navigator-content {
+        padding: 1rem;
+    }
+
+    .navigator-photos .navigator-card-main .navigator-content {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigator-photos .navigator-card-main,
+    .navigator-photos .navigator-card-top,
+    .navigator-photos .navigator-card-small {
+        min-height: 160px;
+    }
+}
+
+/* ==========================================================================
    Categories Section (Legacy - pro zpětnou kompatibilitu)
    ========================================================================== */
 
