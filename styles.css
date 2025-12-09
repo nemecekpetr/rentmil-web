@@ -783,16 +783,16 @@ h4 {
    ========================================================================== */
 
 .product-navigator {
-    padding: 4rem 0 5rem;
-    background: var(--color-white);
+    padding: 3rem 0 4rem;
+    background: var(--color-gray-100);
 }
 
 .navigator-grid {
     display: grid;
     grid-template-columns: 1.3fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 1rem;
-    min-height: 520px;
+    gap: 0.75rem;
+    min-height: 420px;
 }
 
 /* Hlavní karta - Bazénové sety (zabírá 2 řádky vlevo) */
@@ -865,19 +865,19 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
-    min-height: 180px;
+    padding: 1rem;
+    min-height: 140px;
     background: var(--color-white);
 }
 
 .navigator-card-main .navigator-image {
-    padding: 3.5rem 2rem 1.5rem;
-    min-height: 300px;
+    padding: 2.5rem 1.5rem 1rem;
+    min-height: 220px;
 }
 
 .navigator-card-top .navigator-image {
     min-height: 100%;
-    padding: 1.5rem 2rem;
+    padding: 1rem 1.5rem;
 }
 
 .navigator-card-top {
@@ -911,13 +911,13 @@ h4 {
 
 /* Obsah karty */
 .navigator-content {
-    padding: 1rem 1.25rem 1.25rem;
+    padding: 0.75rem 1rem 1rem;
     background: var(--color-white);
     position: relative;
 }
 
 .navigator-card-main .navigator-content {
-    padding: 1.25rem 1.75rem 1.75rem;
+    padding: 1rem 1.25rem 1.25rem;
 }
 
 .navigator-content h3 {
