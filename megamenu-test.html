@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megamenu Test - Zastřešení bazénů</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .test-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .test-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .test-variant {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .test-variant h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Zobrazit megamenu staticky pro testování */
+        .megamenu-static {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            padding-top: 0;
+        }
+
+        .megamenu-static .megamenu-container {
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Varianta 2 - široké megamenu jako Bazény */
+        .megamenu-zastreseni-v2 {
+            min-width: 700px;
+        }
+
+        .megamenu-zastreseni-v2 .megamenu-container {
+            padding: 1.5rem;
+        }
+
+        .megamenu-zastreseni-v2 .megamenu-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .megamenu-zastreseni-v2 .megamenu-column {
+            min-width: 0;
+        }
+
+        .megamenu-zastreseni-v2 .megamenu-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+
+        .megamenu-zastreseni-v2 .megamenu-title svg {
+            color: var(--color-primary);
+        }
+
+        .megamenu-zastreseni-v2 .megamenu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .megamenu-zastreseni-v2 .megamenu-list li a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.875rem;
+            color: var(--color-gray-700);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+        }
+
+        .megamenu-zastreseni-v2 .megamenu-list li a:hover {
+            background: var(--color-primary-light);
+            color: var(--color-primary);
+        }
+
+        .megamenu-zastreseni-v2 .megamenu-list li a.megamenu-highlight {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .megamenu-zastreseni-v2 .megamenu-footer {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--color-gray-200);
+        }
+
+        .megamenu-zastreseni-v2 .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            background: var(--color-gray-100);
+            border-radius: var(--radius-sm);
+            font-size: 0.7rem;
+            color: var(--color-gray-500);
+            margin-left: 0.25rem;
+        }
+
+        .megamenu-zastreseni-v2 .brand-badge img {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 class="test-title">Porovnání megamenu variant - Zastřešení bazénů</h1>
+
+        <div class="test-grid">
+            <!-- Varianta 1 - Aktuální -->
+            <div class="test-variant">
+                <h2>Varianta 1 (aktuální)</h2>
+                <div class="megamenu megamenu-zastreseni megamenu-static">
+                    <div class="megamenu-container">
+                        <!-- Nejprodávanější zastřešení -->
+                        <div class="megamenu-featured">
+                            <h3 class="megamenu-section-title">Nejprodávanější zastřešení</h3>
+                            <div class="megamenu-featured-grid">
+                                <a href="/katalog/zastreseni-bazenu/azure-compact-flat" class="featured-card">
+                                    <span class="featured-label">Design</span>
+                                    <span class="featured-name">Azure Compact Flat</span>
+                                </a>
+                                <a href="/katalog/zastreseni-bazenu/dream" class="featured-card">
+                                    <span class="featured-label">Nízké</span>
+                                    <span class="featured-name">Dream</span>
+                                </a>
+                                <a href="/katalog/zastreseni-bazenu/practic" class="featured-card">
+                                    <span class="featured-label">Ekonomické</span>
+                                    <span class="featured-name">Practic</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Rozdělovník značek -->
+                        <div class="megamenu-brands">
+                            <h4 class="megamenu-section-title">Všechna zastřešení</h4>
+                            <a href="/katalog/zastreseni-bazenu/alukov" class="brand-link">
+                                <img src="images/logo-alukov.jpeg" alt="Alukov" class="brand-logo">
+                                <span>Zastřešení Alukov</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 18l6-6-6-6"/>
+                                </svg>
+                            </a>
+                            <a href="/katalog/zastreseni-bazenu/alupol" class="brand-link">
+                                <img src="images/logo-alupol.png" alt="Alupol" class="brand-logo">
+                                <span>Zastřešení Alupol</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 18l6-6-6-6"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Varianta 2 - Nová (styl jako Bazény) -->
+            <div class="test-variant">
+                <h2>Varianta 2 (nová - styl jako Bazény)</h2>
+                <div class="megamenu megamenu-zastreseni-v2 megamenu-static">
+                    <div class="megamenu-container">
+                        <div class="megamenu-columns">
+                            <!-- Sloupec 1: Nejprodávanější -->
+                            <div class="megamenu-column">
+                                <h3 class="megamenu-title">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                    </svg>
+                                    Nejprodávanější
+                                </h3>
+                                <ul class="megamenu-list">
+                                    <li><a href="/katalog/zastreseni-bazenu/azure-compact-flat" class="megamenu-highlight">Azure Compact Flat</a></li>
+                                    <li><a href="/katalog/zastreseni-bazenu/dream">Dream</a></li>
+                                    <li><a href="/katalog/zastreseni-bazenu/practic">Practic</a></li>
+                                    <li><a href="/katalog/zastreseni-bazenu/neo">Neo</a></li>
+                                    <li><a href="/katalog/zastreseni-bazenu/klasik">Klasik</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Sloupec 2: Podle výšky -->
+                            <div class="megamenu-column">
+                                <h3 class="megamenu-title">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2v20M2 12h4M18 12h4M7 7l-2-2M17 7l2-2M7 17l-2 2M17 17l2 2"/>
+                                    </svg>
+                                    Podle výšky
+                                </h3>
+                                <ul class="megamenu-list">
+                                    <li><a href="/katalog/zastreseni-bazenu/nizka">Nízká zastřešení</a></li>
+                                    <li><a href="/katalog/zastreseni-bazenu/stredni">Středně vysoká</a></li>
+                                    <li><a href="/katalog/zastreseni-bazenu/vysoka">Vysoká (pochozí)</a></li>
+                                    <li><a href="/katalog/zastreseni-bazenu/teleskopicka">Teleskopická</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Sloupec 3: Podle značky -->
+                            <div class="megamenu-column">
+                                <h3 class="megamenu-title">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                                        <line x1="7" y1="7" x2="7.01" y2="7"/>
+                                    </svg>
+                                    Podle značky
+                                </h3>
+                                <ul class="megamenu-list">
+                                    <li>
+                                        <a href="/katalog/zastreseni-bazenu/alukov">
+                                            Zastřešení Alukov
+                                            <span class="brand-badge">
+                                                <img src="images/logo-alukov.jpeg" alt="">
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/katalog/zastreseni-bazenu/alupol">
+                                            Zastřešení Alupol
+                                            <span class="brand-badge">
+                                                <img src="images/logo-alupol.png" alt="">
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Footer s tlačítky -->
+                        <div class="megamenu-footer megamenu-footer-3btns">
+                            <a href="/katalog/zastreseni-bazenu" class="btn-megamenu">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <path d="M3 9h18"/>
+                                </svg>
+                                Všechna zastřešení
+                            </a>
+                            <a href="/katalog/zastreseni-bazenu/cenik" class="btn-megamenu">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                                Ceník zastřešení
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
