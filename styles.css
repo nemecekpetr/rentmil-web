@@ -1004,8 +1004,8 @@ h4 {
     transform: translateX(2px);
 }
 
-.navigator-card-small .navigator-content {
-    padding-right: 3.5rem;
+.navigator-card-small .navigator-cta {
+    font-size: var(--text-xs);
 }
 
 
@@ -1107,10 +1107,6 @@ h4 {
 
     .navigator-card-main .navigator-content {
         padding: 1rem 1.25rem 1.25rem;
-    }
-
-    .navigator-card-small .navigator-content {
-        padding-right: 3rem;
     }
 
     .navigator-content h3 {
