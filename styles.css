@@ -1293,7 +1293,8 @@ h4 {
     font-size: var(--text-base);
 }
 
-.navigator-photos .navigator-card-small .navigator-content p {
+.navigator-photos .navigator-card-small .navigator-content p,
+.navigator-photos .navigator-card-top .navigator-content p {
     display: none;
 }
 
