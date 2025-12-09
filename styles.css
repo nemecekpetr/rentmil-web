@@ -499,9 +499,15 @@ h4 {
 /* Rozdělovník značek */
 .megamenu-brands {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
     padding-top: 1rem;
     border-top: 1px solid var(--color-gray-100);
+}
+
+.megamenu-brands .megamenu-section-title {
+    width: 100%;
+    margin-bottom: 0.25rem;
 }
 
 .brand-link {
@@ -528,8 +534,8 @@ h4 {
 }
 
 .brand-logo {
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
     object-fit: contain;
     border-radius: var(--radius-sm);
 }
