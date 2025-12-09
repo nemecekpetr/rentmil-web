@@ -775,6 +775,14 @@ h4 {
     letter-spacing: -0.02em;
 }
 
+.hero-text h1 .hero-title-light {
+    font-weight: 300;
+}
+
+.hero-text h1 strong {
+    font-weight: 700;
+}
+
 .hero-description {
     font-size: var(--text-lg);
     color: var(--color-gray-600);
