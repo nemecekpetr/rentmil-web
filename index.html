@@ -35,7 +35,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
+            object-position: 70% center; /* Posunuto doprava pro lepší viditelnost bazénu */
             will-change: transform;
         }
 
@@ -102,34 +102,8 @@
             position: relative;
             z-index: 10;
             max-width: 680px;
-            padding: 2rem 0;
-        }
-
-        .hero-luxury-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.625rem;
-            padding: 0.625rem 1.25rem;
-            background: linear-gradient(135deg, rgba(255, 134, 33, 0.08) 0%, rgba(72, 169, 166, 0.06) 100%);
-            border: 1px solid rgba(255, 134, 33, 0.15);
-            border-radius: 100px;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 0.1s;
-        }
-
-        .hero-luxury-badge svg {
-            color: var(--color-primary);
-        }
-
-        .hero-luxury-badge span {
-            font-family: var(--font-body);
-            font-size: 0.8125rem;
-            font-weight: 600;
-            color: var(--color-gray-700);
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
+            padding-top: 0;
+            margin-top: -3rem; /* Posun obsahu výše */
         }
 
         .hero-luxury h1 {
@@ -316,52 +290,75 @@
             font-style: italic;
         }
 
+        /* Maskot Rentmil */
+        .hero-luxury-mascot {
+            position: absolute;
+            right: 8%;
+            bottom: 15%;
+            z-index: 8;
+            opacity: 0;
+            animation: fadeInMascot 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.8s;
+        }
+
+        .hero-luxury-mascot img {
+            width: 180px;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+        }
+
+        @keyframes fadeInMascot {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll šipka */
         .hero-luxury-scroll {
             position: absolute;
-            bottom: 2.5rem;
+            bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.75rem;
             opacity: 0;
             animation: fadeIn 1s ease forwards;
             animation-delay: 1.2s;
         }
 
-        .hero-luxury-scroll span {
-            font-size: 0.6875rem;
-            font-weight: 500;
-            color: var(--color-gray-400);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
-        .hero-luxury-scroll-line {
-            width: 1px;
+        .hero-luxury-scroll-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
             height: 50px;
-            background: linear-gradient(to bottom, var(--color-gray-300), transparent);
-            position: relative;
-            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
         }
 
-        .hero-luxury-scroll-line::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 15px;
-            background: var(--color-primary);
-            animation: scrollPulse 2.5s ease-in-out infinite;
+        .hero-luxury-scroll-arrow:hover {
+            transform: translateY(5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            background: white;
         }
 
-        @keyframes scrollPulse {
-            0% { top: -15px; opacity: 0; }
-            20% { opacity: 1; }
-            100% { top: 100%; opacity: 0; }
+        .hero-luxury-scroll-arrow svg {
+            color: var(--color-blue-dark);
+            animation: bounceArrow 2s ease-in-out infinite;
+        }
+
+        @keyframes bounceArrow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
         }
 
         @keyframes fadeInUp {
@@ -417,12 +414,25 @@
             .hero-luxury-decoration {
                 display: none;
             }
+
+            .hero-luxury-mascot {
+                right: 5%;
+                bottom: 10%;
+            }
+
+            .hero-luxury-mascot img {
+                width: 140px;
+            }
         }
 
         @media (max-width: 768px) {
             .hero-luxury {
                 min-height: auto;
-                padding: 7rem 0 5rem;
+                padding: 5rem 0 4rem;
+            }
+
+            .hero-luxury-content {
+                margin-top: 0;
             }
 
             .hero-luxury h1 {
@@ -449,23 +459,21 @@
             }
 
             .hero-luxury-scroll {
+                bottom: 1rem;
+            }
+
+            .hero-luxury-scroll-arrow {
+                width: 44px;
+                height: 44px;
+            }
+
+            .hero-luxury-mascot {
                 display: none;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <a href="/bazenove-sety" class="top-bar-link">
-                <span class="top-bar-arrow">&lsaquo;</span>
-                <span class="top-bar-text"><strong>Podzimní slevy!</strong> Až 24 000 Kč na bazénové sety.</span>
-                <span class="top-bar-arrow">&rsaquo;</span>
-            </a>
-        </div>
-    </div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -684,16 +692,13 @@
         <!-- Dekorace -->
         <div class="hero-luxury-decoration"></div>
 
+        <!-- Maskot Rentmil -->
+        <div class="hero-luxury-mascot">
+            <img src="hero sekce/Maskot - Rentmil.png" alt="Rentmil maskot">
+        </div>
+
         <div class="container">
             <div class="hero-luxury-content">
-                <!-- Badge -->
-                <div class="hero-luxury-badge">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                    </svg>
-                    <span>Prémiové bazény od roku 2002</span>
-                </div>
-
                 <!-- Nadpis -->
                 <h1>
                     <span class="light">Bazény v klidu.</span>
@@ -717,8 +722,12 @@
                         </svg>
                         Nezávazná poptávka
                     </a>
-                    <a href="katalog/produkt/cenik-zapustenych-bazenu.html" class="hero-luxury-btn-secondary">
-                        Zobrazit ceník
+                    <a href="https://nemecekpetr.github.io/rentmil-konfigurator/" class="hero-luxury-btn-secondary" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                        Konfigurátor
                     </a>
                 </div>
 
@@ -742,15 +751,18 @@
             </div>
         </div>
 
-        <!-- Scroll indikátor -->
+        <!-- Scroll šipka -->
         <div class="hero-luxury-scroll">
-            <span>Scroll</span>
-            <div class="hero-luxury-scroll-line"></div>
+            <a href="#rozcestnik" class="hero-luxury-scroll-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9l6 6 6-6"/>
+                </svg>
+            </a>
         </div>
     </section>
 
     <!-- Product Navigator / Rozcestník -->
-    <section class="product-navigator">
+    <section class="product-navigator" id="rozcestnik">
         <div class="container">
             <div class="navigator-grid">
                 <!-- Bazénové sety - hlavní velká karta vlevo -->
@@ -1141,6 +1153,21 @@
                     const scrolled = window.pageYOffset;
                     const rate = scrolled * 0.35;
                     parallaxBg.style.transform = 'translateY(' + rate + 'px)';
+                });
+            }
+
+            // Smooth scroll pro šipku
+            const scrollArrow = document.querySelector('.hero-luxury-scroll-arrow');
+            if (scrollArrow) {
+                scrollArrow.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 });
             }
         });
