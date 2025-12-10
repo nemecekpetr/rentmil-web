@@ -325,33 +325,51 @@
             font-style: italic;
         }
 
-        /* Maskot Rentmil - sedí na lince nad hodnocením */
-        .hero-luxury-mascot {
+        /* Reference s maskotem na pravé straně */
+        .hero-luxury-review {
             position: absolute;
-            right: -100px; /* Posunut více doprava */
-            top: -180px; /* O 50px výše */
+            right: calc(6% + 200px);
+            top: calc(50% - 200px);
+            transform: translateY(-50%);
             z-index: 15;
             opacity: 0;
-            animation: fadeInMascot 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 0.8s;
+            animation: fadeInReview 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.9s;
         }
 
-        .hero-luxury-mascot img {
-            width: 260px; /* Zvětšeno o 30% (200 * 1.3) */
+        .hero-luxury-review-wrapper {
+            position: relative;
+        }
+
+        .hero-luxury-review-img {
+            width: 340px;
             height: auto;
-            filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.13));
-            animation: levitate 4s ease-in-out infinite;
-            animation-delay: 1.8s; /* Počká na fadeIn */
+            border-radius: 24px;
         }
 
-        @keyframes fadeInMascot {
+        /* Maskot vedle reference */
+        .hero-luxury-review-mascot {
+            position: absolute;
+            bottom: -80px;
+            right: -60px;
+            z-index: 16;
+        }
+
+        .hero-luxury-review-mascot img {
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+            animation: levitate 4s ease-in-out infinite;
+        }
+
+        @keyframes fadeInReview {
             from {
                 opacity: 0;
-                transform: translateY(15px);
+                transform: translateY(-50%) scale(0.95);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(-50%) scale(1);
             }
         }
 
@@ -360,7 +378,7 @@
                 transform: translateY(0);
             }
             50% {
-                transform: translateY(-12px);
+                transform: translateY(-15px);
             }
         }
 
@@ -464,17 +482,25 @@
                 display: none;
             }
 
-            .hero-luxury-mascot {
-                right: 0;
-                top: -120px;
-            }
-
-            .hero-luxury-mascot img {
-                width: 180px;
-            }
-
             .hero-luxury-scroll {
                 bottom: 1rem;
+            }
+
+            .hero-luxury-review {
+                right: 3%;
+            }
+
+            .hero-luxury-review-img {
+                width: 280px;
+            }
+
+            .hero-luxury-review-mascot {
+                bottom: -60px;
+                right: -40px;
+            }
+
+            .hero-luxury-review-mascot img {
+                width: 160px;
             }
         }
 
@@ -527,16 +553,6 @@
                 padding-top: 1.5rem;
             }
 
-            .hero-luxury-mascot {
-                position: absolute;
-                top: -100px;
-                right: -20px;
-            }
-
-            .hero-luxury-mascot img {
-                width: 120px;
-            }
-
             .hero-luxury-scroll {
                 position: absolute;
                 bottom: 1.5rem;
@@ -554,6 +570,11 @@
                 width: 24px;
                 height: 24px;
             }
+
+            /* Skrýt recenzní kartičku na mobilu */
+            .hero-luxury-review {
+                display: none;
+            }
         }
 
         @media (max-width: 480px) {
@@ -563,15 +584,6 @@
 
             .hero-luxury h1 {
                 font-size: 1.75rem;
-            }
-
-            .hero-luxury-mascot {
-                top: -80px;
-                right: -10px;
-            }
-
-            .hero-luxury-mascot img {
-                width: 100px;
             }
 
             .hero-luxury-google-info .stars {
@@ -710,44 +722,82 @@
                     </li>
                     <li class="nav-item has-megamenu">
                         <a href="/katalog/zastreseni-bazenu" class="nav-link">Zastřešení bazénů</a>
-                        <!-- Megamenu Zastřešení v3 -->
-                        <div class="megamenu megamenu-zastreseni">
+                        <!-- Megamenu Zastřešení - 3 sloupce -->
+                        <div class="megamenu megamenu-zastreseni-v2">
                             <div class="megamenu-container">
-                                <!-- Nejprodávanější zastřešení -->
-                                <div class="megamenu-featured">
-                                    <h3 class="megamenu-section-title">Nejprodávanější zastřešení</h3>
-                                    <div class="megamenu-featured-grid">
-                                        <a href="/katalog/zastreseni-bazenu/azure-compact-flat" class="featured-card">
-                                            <span class="featured-label">Design</span>
-                                            <span class="featured-name">Azure Compact Flat</span>
-                                        </a>
-                                        <a href="/katalog/zastreseni-bazenu/dream" class="featured-card">
-                                            <span class="featured-label">Nízké</span>
-                                            <span class="featured-name">Dream</span>
-                                        </a>
-                                        <a href="/katalog/zastreseni-bazenu/practic" class="featured-card">
-                                            <span class="featured-label">Ekonomické</span>
-                                            <span class="featured-name">Practic</span>
-                                        </a>
+                                <div class="megamenu-columns">
+                                    <!-- Sloupec 1: Nejprodávanější -->
+                                    <div class="megamenu-column">
+                                        <h4 class="megamenu-column-title">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                            </svg>
+                                            Nejprodávanější
+                                        </h4>
+                                        <ul class="megamenu-links">
+                                            <li><a href="/katalog/zastreseni-bazenu/azure-compact-flat" class="megamenu-link megamenu-link-highlight">Azure Compact Flat</a></li>
+                                            <li><a href="/katalog/zastreseni-bazenu/dream" class="megamenu-link">Dream</a></li>
+                                            <li><a href="/katalog/zastreseni-bazenu/practic" class="megamenu-link">Practic</a></li>
+                                            <li><a href="/katalog/zastreseni-bazenu/neo" class="megamenu-link">Neo</a></li>
+                                            <li><a href="/katalog/zastreseni-bazenu/klasik" class="megamenu-link">Klasik</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Sloupec 2: Podle výšky -->
+                                    <div class="megamenu-column">
+                                        <h4 class="megamenu-column-title">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M12 3v18M8 7l4-4 4 4M8 17l4 4 4-4"/>
+                                            </svg>
+                                            Podle výšky
+                                        </h4>
+                                        <ul class="megamenu-links">
+                                            <li><a href="/katalog/zastreseni-bazenu/nizka" class="megamenu-link">Nízká zastřešení</a></li>
+                                            <li><a href="/katalog/zastreseni-bazenu/stredne-vysoka" class="megamenu-link">Středně vysoká</a></li>
+                                            <li><a href="/katalog/zastreseni-bazenu/vysoka-pochozi" class="megamenu-link">Vysoká (pochozí)</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Sloupec 3: Podle značky -->
+                                    <div class="megamenu-column">
+                                        <h4 class="megamenu-column-title">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                                                <line x1="7" y1="7" x2="7.01" y2="7"/>
+                                            </svg>
+                                            Podle značky
+                                        </h4>
+                                        <ul class="megamenu-links">
+                                            <li>
+                                                <a href="/katalog/zastreseni-bazenu/alukov" class="megamenu-link megamenu-link-brand">
+                                                    Zastřešení Alukov
+                                                    <img src="images/logo-alukov.jpeg" alt="Alukov" class="megamenu-brand-logo">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/katalog/zastreseni-bazenu/alupol" class="megamenu-link megamenu-link-brand">
+                                                    Zastřešení Alupol
+                                                    <img src="images/logo-alupol.png" alt="Alupol" class="megamenu-brand-logo">
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
 
-                                <!-- Rozdělovník značek -->
-                                <div class="megamenu-brands">
-                                    <h4 class="megamenu-section-title">Všechna zastřešení</h4>
-                                    <a href="/katalog/zastreseni-bazenu/alukov" class="brand-link">
-                                        <img src="images/logo-alukov.jpeg" alt="Alukov" class="brand-logo">
-                                        <span>Zastřešení Alukov</span>
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M9 18l6-6-6-6"/>
+                                <!-- CTA tlačítka -->
+                                <div class="megamenu-footer">
+                                    <a href="/katalog/zastreseni-bazenu" class="megamenu-footer-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                            <path d="M3 9h18"/>
                                         </svg>
+                                        Všechna zastřešení
                                     </a>
-                                    <a href="/katalog/zastreseni-bazenu/alupol" class="brand-link">
-                                        <img src="images/logo-alupol.png" alt="Alupol" class="brand-logo">
-                                        <span>Zastřešení Alupol</span>
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M9 18l6-6-6-6"/>
+                                    <a href="/cenik-zastreseni" class="megamenu-footer-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                                         </svg>
+                                        Ceník zastřešení
                                     </a>
                                 </div>
                             </div>
@@ -804,6 +854,17 @@
         <!-- Dekorace -->
         <div class="hero-luxury-decoration"></div>
 
+        <!-- Reference s maskotem -->
+        <div class="hero-luxury-review">
+            <div class="hero-luxury-review-wrapper">
+                <img src="hero sekce/reference.png" alt="Reference zákazníků" class="hero-luxury-review-img">
+                <!-- Maskot vedle reference -->
+                <div class="hero-luxury-review-mascot">
+                    <img src="hero sekce/Maskot - Rentmil.png" alt="Rentmil maskot">
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <div class="hero-luxury-content">
                 <!-- Nadpis -->
@@ -838,12 +899,8 @@
                     </a>
                 </div>
 
-                <!-- Social proof s maskotem -->
+                <!-- Social proof -->
                 <div class="hero-luxury-proof">
-                    <!-- Maskot Rentmil - sedí na lince -->
-                    <div class="hero-luxury-mascot">
-                        <img src="hero sekce/Maskot - Rentmil.png" alt="Rentmil maskot">
-                    </div>
                     <div class="hero-luxury-google">
                         <svg viewBox="0 0 24 24">
                             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>

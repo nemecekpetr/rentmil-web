@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentmil - Hero Clay Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FF8621;
+            --color-primary-light: #FFB066;
+            --color-blue-dark: #01384B;
+            --color-blue-water: #48A9A6;
+            --color-blue-light: #7EC8E3;
+            --color-cream: #FDF8F3;
+            --color-cream-dark: #F5EDE4;
+            --color-gray-100: #F8FAFC;
+            --color-gray-200: #E2E8F0;
+            --color-gray-500: #64748B;
+            --color-gray-600: #475569;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F6 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ==========================================================================
+           HERO CLAY STYLE
+           ========================================================================== */
+
+        .hero-clay {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #F8FAFC 0%, #EEF2F6 50%, #E8EDF2 100%);
+            overflow: hidden;
+        }
+
+        /* Dekorativní kapky vody */
+        .hero-clay::before,
+        .hero-clay::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(126, 200, 227, 0.4) 0%, rgba(72, 169, 166, 0.2) 100%);
+            filter: blur(0px);
+        }
+
+        .hero-clay::before {
+            width: 80px;
+            height: 80px;
+            top: 15%;
+            right: 20%;
+            animation: floatDrop 6s ease-in-out infinite;
+        }
+
+        .hero-clay::after {
+            width: 50px;
+            height: 50px;
+            top: 60%;
+            right: 8%;
+            animation: floatDrop 5s ease-in-out infinite 1s;
+        }
+
+        @keyframes floatDrop {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .hero-clay-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        /* Levá strana - obsah */
+        .hero-clay-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* 3D Clay badge */
+        .hero-clay-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: linear-gradient(145deg, #FFFFFF 0%, #F5EDE4 100%);
+            border-radius: 100px;
+            box-shadow:
+                8px 8px 20px rgba(0, 0, 0, 0.08),
+                -4px -4px 12px rgba(255, 255, 255, 0.9),
+                inset 1px 1px 2px rgba(255, 255, 255, 0.8),
+                inset -1px -1px 2px rgba(0, 0, 0, 0.03);
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-blue-dark);
+        }
+
+        .hero-clay-badge-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 6px rgba(255, 134, 33, 0.3);
+        }
+
+        .hero-clay-badge-icon svg {
+            width: 14px;
+            height: 14px;
+            color: white;
+        }
+
+        /* Nadpis */
+        .hero-clay h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.15;
+            color: var(--color-blue-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-clay h1 .light {
+            display: block;
+            font-weight: 600;
+            color: var(--color-gray-500);
+            font-size: 0.85em;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-clay h1 .bold {
+            display: block;
+            font-weight: 800;
+        }
+
+        .hero-clay h1 .accent {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-clay h1 .accent::after {
+            content: '';
+            position: absolute;
+            bottom: 0.1em;
+            left: 0;
+            width: 100%;
+            height: 0.15em;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-blue-water));
+            border-radius: 4px;
+            opacity: 0.4;
+        }
+
+        /* Popis */
+        .hero-clay-description {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--color-gray-600);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+        }
+
+        /* 3D Clay CTA tlačítka */
+        .hero-clay-cta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .btn-clay-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.125rem 2rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(145deg, var(--color-primary) 0%, #E5750D 100%);
+            border-radius: 16px;
+            box-shadow:
+                6px 6px 16px rgba(255, 134, 33, 0.3),
+                -2px -2px 8px rgba(255, 255, 255, 0.1),
+                inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+                inset -1px -1px 2px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-clay-primary:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                8px 10px 24px rgba(255, 134, 33, 0.35),
+                -2px -2px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-clay-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.125rem 2rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-blue-dark);
+            text-decoration: none;
+            background: linear-gradient(145deg, #FFFFFF 0%, #F0F4F8 100%);
+            border-radius: 16px;
+            box-shadow:
+                6px 6px 16px rgba(0, 0, 0, 0.08),
+                -4px -4px 12px rgba(255, 255, 255, 0.9),
+                inset 1px 1px 2px rgba(255, 255, 255, 0.8),
+                inset -1px -1px 2px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-clay-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                8px 10px 20px rgba(0, 0, 0, 0.1),
+                -4px -4px 12px rgba(255, 255, 255, 0.9);
+        }
+
+        /* 3D Clay Social Proof */
+        .hero-clay-proof {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-clay-proof-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1.25rem;
+            background: linear-gradient(145deg, #FFFFFF 0%, #F5F7FA 100%);
+            border-radius: 14px;
+            box-shadow:
+                5px 5px 14px rgba(0, 0, 0, 0.06),
+                -3px -3px 10px rgba(255, 255, 255, 0.8),
+                inset 1px 1px 2px rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-clay-proof-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #FBBC05 0%, #F5A623 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 6px rgba(251, 188, 5, 0.3);
+        }
+
+        .hero-clay-proof-icon svg {
+            width: 20px;
+            height: 20px;
+            color: white;
+        }
+
+        .hero-clay-proof-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-clay-proof-value {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--color-blue-dark);
+        }
+
+        .hero-clay-proof-label {
+            font-size: 0.75rem;
+            color: var(--color-gray-500);
+        }
+
+        /* Pravá strana - 3D kartička s referencí */
+        .hero-clay-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hlavní 3D kartička */
+        .hero-clay-card {
+            position: relative;
+            width: 420px;
+            padding: 3rem 2.5rem;
+            background: linear-gradient(145deg, var(--color-cream) 0%, var(--color-cream-dark) 100%);
+            border-radius: 32px;
+            box-shadow:
+                20px 20px 60px rgba(0, 0, 0, 0.12),
+                -10px -10px 30px rgba(255, 255, 255, 0.9),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.8),
+                inset -2px -2px 4px rgba(0, 0, 0, 0.03);
+            text-align: center;
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-clay-card:hover {
+            transform: perspective(1000px) rotateY(-2deg) rotateX(1deg);
+        }
+
+        /* Barevný okraj kartičky */
+        .hero-clay-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-blue-water), var(--color-primary));
+            border-radius: 0 0 32px 32px;
+        }
+
+        .hero-clay-card::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: linear-gradient(180deg, var(--color-blue-water), var(--color-primary));
+            border-radius: 32px 0 0 32px;
+        }
+
+        /* 3D uvozovky */
+        .hero-clay-quotes {
+            position: absolute;
+            top: -30px;
+            right: 30px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .hero-clay-quote {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(145deg, var(--color-primary) 0%, #E5750D 100%);
+            border-radius: 50% 50% 50% 10%;
+            box-shadow:
+                6px 6px 16px rgba(255, 134, 33, 0.35),
+                -2px -2px 6px rgba(255, 255, 255, 0.2),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.3);
+            transform: rotate(180deg);
+        }
+
+        .hero-clay-quote:last-child {
+            transform: rotate(180deg) translateY(-5px);
+        }
+
+        /* Kapky vody kolem kartičky */
+        .hero-clay-drop {
+            position: absolute;
+            background: linear-gradient(135deg, rgba(126, 200, 227, 0.7) 0%, rgba(72, 169, 166, 0.4) 100%);
+            border-radius: 50%;
+            box-shadow:
+                inset 2px 2px 4px rgba(255, 255, 255, 0.6),
+                2px 2px 6px rgba(72, 169, 166, 0.2);
+        }
+
+        .hero-clay-drop-1 {
+            width: 30px;
+            height: 30px;
+            top: 20%;
+            left: -20px;
+            animation: floatDrop 4s ease-in-out infinite;
+        }
+
+        .hero-clay-drop-2 {
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: -35px;
+            animation: floatDrop 5s ease-in-out infinite 0.5s;
+        }
+
+        .hero-clay-drop-3 {
+            width: 25px;
+            height: 25px;
+            bottom: 30%;
+            right: -25px;
+            animation: floatDrop 4.5s ease-in-out infinite 1s;
+        }
+
+        .hero-clay-drop-4 {
+            width: 18px;
+            height: 18px;
+            top: 10%;
+            right: -15px;
+            animation: floatDrop 5.5s ease-in-out infinite 0.3s;
+        }
+
+        /* Obsah kartičky */
+        .hero-clay-card-author {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-blue-dark);
+            margin-bottom: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .hero-clay-card-text {
+            font-size: 1.375rem;
+            line-height: 1.4;
+            color: var(--color-blue-dark);
+            opacity: 0.85;
+        }
+
+        /* Maskot */
+        .hero-clay-mascot {
+            position: absolute;
+            bottom: -100px;
+            right: -80px;
+            z-index: 20;
+        }
+
+        .hero-clay-mascot img {
+            width: 220px;
+            height: auto;
+            filter: drop-shadow(10px 20px 30px rgba(0, 0, 0, 0.15));
+            animation: levitate 4s ease-in-out infinite;
+        }
+
+        @keyframes levitate {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Plovoucí bazénová karta */
+        .hero-clay-float-card {
+            position: absolute;
+            bottom: 60px;
+            left: -60px;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(145deg, #FFFFFF 0%, #F5F7FA 100%);
+            border-radius: 16px;
+            box-shadow:
+                8px 8px 24px rgba(0, 0, 0, 0.1),
+                -4px -4px 12px rgba(255, 255, 255, 0.9),
+                inset 1px 1px 2px rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            animation: floatCard 5s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-10px) rotate(0deg); }
+        }
+
+        .hero-clay-float-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--color-blue-water) 0%, var(--color-blue-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 3px 3px 8px rgba(1, 56, 75, 0.25);
+        }
+
+        .hero-clay-float-icon svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+
+        .hero-clay-float-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-clay-float-value {
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: var(--color-blue-dark);
+        }
+
+        .hero-clay-float-label {
+            font-size: 0.75rem;
+            color: var(--color-gray-500);
+        }
+
+        /* Scroll šipka */
+        .hero-clay-scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .hero-clay-scroll-btn {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(145deg, #FFFFFF 0%, #F0F4F8 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                6px 6px 16px rgba(0, 0, 0, 0.08),
+                -4px -4px 12px rgba(255, 255, 255, 0.9),
+                inset 1px 1px 2px rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero-clay-scroll-btn:hover {
+            transform: translateY(5px);
+        }
+
+        .hero-clay-scroll-btn svg {
+            width: 28px;
+            height: 28px;
+            color: var(--color-blue-dark);
+            animation: bounceArrow 2s ease-in-out infinite;
+        }
+
+        @keyframes bounceArrow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(6px); }
+        }
+
+        /* Responzivní */
+        @media (max-width: 1200px) {
+            .hero-clay-grid {
+                gap: 3rem;
+            }
+
+            .hero-clay-card {
+                width: 360px;
+                padding: 2.5rem 2rem;
+            }
+
+            .hero-clay-mascot img {
+                width: 180px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero-clay-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-clay-content {
+                order: 1;
+            }
+
+            .hero-clay-visual {
+                order: 2;
+                margin-top: 2rem;
+            }
+
+            .hero-clay-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-clay-cta {
+                justify-content: center;
+            }
+
+            .hero-clay-proof {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .hero-clay-card {
+                transform: none;
+            }
+
+            .hero-clay-card:hover {
+                transform: none;
+            }
+
+            .hero-clay-mascot {
+                right: -40px;
+                bottom: -80px;
+            }
+
+            .hero-clay-mascot img {
+                width: 160px;
+            }
+
+            .hero-clay-float-card {
+                left: -30px;
+                bottom: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-clay {
+                padding: 5rem 0 4rem;
+            }
+
+            .hero-clay h1 {
+                font-size: 2rem;
+            }
+
+            .hero-clay-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-clay-primary,
+            .btn-clay-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .hero-clay-proof {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-clay-card {
+                width: 100%;
+                max-width: 340px;
+            }
+
+            .hero-clay-mascot {
+                display: none;
+            }
+
+            .hero-clay-float-card {
+                display: none;
+            }
+
+            .hero-clay-scroll {
+                bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-clay">
+        <div class="container">
+            <div class="hero-clay-grid">
+                <!-- Levá strana - obsah -->
+                <div class="hero-clay-content">
+                    <div class="hero-clay-badge">
+                        <span class="hero-clay-badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </span>
+                        Prémiové bazény od roku 2002
+                    </div>
+
+                    <h1>
+                        <span class="light">Bazény v klidu.</span>
+                        <span class="bold">Vy zenujete,</span>
+                        <span class="bold"><span class="accent">my bazénujeme.</span></span>
+                        <span class="bold">Už 23 let.</span>
+                    </h1>
+
+                    <p class="hero-clay-description">
+                        Plastové bazény na klíč. Od nadzemních po přelivové.<br>
+                        S kompletním servisem, zastřešením i radou od mistra.
+                    </p>
+
+                    <div class="hero-clay-cta">
+                        <a href="poptavka.html" class="btn-clay-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            Nezávazná poptávka
+                        </a>
+                        <a href="https://nemecekpetr.github.io/rentmil-konfigurator/" class="btn-clay-secondary" target="_blank">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                            Konfigurátor
+                        </a>
+                    </div>
+
+                    <div class="hero-clay-proof">
+                        <div class="hero-clay-proof-item">
+                            <div class="hero-clay-proof-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                            </div>
+                            <div class="hero-clay-proof-text">
+                                <span class="hero-clay-proof-value">4.6 ★★★★★</span>
+                                <span class="hero-clay-proof-label">Google hodnocení</span>
+                            </div>
+                        </div>
+                        <div class="hero-clay-proof-item">
+                            <div class="hero-clay-proof-icon" style="background: linear-gradient(135deg, var(--color-blue-water) 0%, var(--color-blue-dark) 100%); box-shadow: 2px 2px 6px rgba(1, 56, 75, 0.3);">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                            </div>
+                            <div class="hero-clay-proof-text">
+                                <span class="hero-clay-proof-value">1 000+</span>
+                                <span class="hero-clay-proof-label">vyrobených bazénů</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pravá strana - 3D kartička -->
+                <div class="hero-clay-visual">
+                    <div class="hero-clay-card">
+                        <!-- 3D uvozovky -->
+                        <div class="hero-clay-quotes">
+                            <div class="hero-clay-quote"></div>
+                            <div class="hero-clay-quote"></div>
+                        </div>
+
+                        <!-- Kapky vody -->
+                        <div class="hero-clay-drop hero-clay-drop-1"></div>
+                        <div class="hero-clay-drop hero-clay-drop-2"></div>
+                        <div class="hero-clay-drop hero-clay-drop-3"></div>
+                        <div class="hero-clay-drop hero-clay-drop-4"></div>
+
+                        <!-- Obsah -->
+                        <p class="hero-clay-card-author">Blanka Kvaková</p>
+                        <p class="hero-clay-card-text">Bez diskusí špička ve svém oboru.</p>
+                    </div>
+
+                    <!-- Maskot -->
+                    <div class="hero-clay-mascot">
+                        <img src="hero sekce/Maskot - Rentmil.png" alt="Rentmil maskot">
+                    </div>
+
+                    <!-- Plovoucí kartička -->
+                    <div class="hero-clay-float-card">
+                        <div class="hero-clay-float-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="3" y1="9" x2="21" y2="9"/>
+                                <line x1="9" y1="21" x2="9" y2="9"/>
+                            </svg>
+                        </div>
+                        <div class="hero-clay-float-text">
+                            <span class="hero-clay-float-value">23 let</span>
+                            <span class="hero-clay-float-label">na trhu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll šipka -->
+        <div class="hero-clay-scroll">
+            <a href="#rozcestnik" class="hero-clay-scroll-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9l6 6 6-6"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+</body>
+</html>
