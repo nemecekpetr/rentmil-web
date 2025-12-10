@@ -16,7 +16,11 @@
 
         .hero-luxury {
             position: relative;
-            min-height: 100vh;
+            height: 100vh;
+            height: 100dvh; /* Dynamic viewport height - respektuje mobilní UI */
+            min-height: 600px;
+            max-height: 100vh;
+            max-height: 100dvh;
             display: flex;
             align-items: center;
             overflow: hidden;
@@ -35,7 +39,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: 70% center; /* Posunuto doprava pro lepší viditelnost bazénu */
+            object-position: 85% center; /* Ještě více doprava - maximální viditelnost bazénu */
             will-change: transform;
         }
 
@@ -164,7 +168,7 @@
             flex-wrap: wrap;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem; /* Větší rozestup před proof sekcí s maskotem */
             opacity: 0;
             animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             animation-delay: 0.55s;
@@ -215,22 +219,46 @@
         .hero-luxury-btn-secondary {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 1.125rem 1.75rem;
+            gap: 0.625rem;
+            padding: 1.125rem 2rem;
             font-family: var(--font-body);
             font-size: 1rem;
-            font-weight: 500;
-            color: var(--color-blue-dark);
+            font-weight: 600;
+            color: white;
             text-decoration: none;
-            background: transparent;
-            border: 1.5px solid rgba(1, 56, 75, 0.15);
+            background: linear-gradient(135deg, var(--color-blue-water) 0%, var(--color-blue-dark) 100%);
+            border: none;
             border-radius: 100px;
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(1, 56, 75, 0.25);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-luxury-btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .hero-luxury-btn-secondary:hover::before {
+            left: 100%;
         }
 
         .hero-luxury-btn-secondary:hover {
-            background: rgba(1, 56, 75, 0.04);
-            border-color: rgba(1, 56, 75, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(1, 56, 75, 0.35);
+        }
+
+        /* Wrapper pro CTA a proof s maskotem */
+        .hero-luxury-bottom {
+            position: relative;
+            margin-top: 2.5rem;
         }
 
         .hero-luxury-proof {
@@ -238,11 +266,12 @@
             flex-wrap: wrap;
             align-items: center;
             gap: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(1, 56, 75, 0.08);
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(1, 56, 75, 0.1);
             opacity: 0;
             animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             animation-delay: 0.7s;
+            position: relative;
         }
 
         .hero-luxury-google {
@@ -290,27 +319,27 @@
             font-style: italic;
         }
 
-        /* Maskot Rentmil */
+        /* Maskot Rentmil - sedí na lince nad hodnocením */
         .hero-luxury-mascot {
             position: absolute;
-            right: 8%;
-            bottom: 15%;
-            z-index: 8;
+            right: 0;
+            top: -65px; /* Sedí na border-top lince */
+            z-index: 15;
             opacity: 0;
             animation: fadeInMascot 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             animation-delay: 0.8s;
         }
 
         .hero-luxury-mascot img {
-            width: 180px;
+            width: 100px;
             height: auto;
-            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.1));
         }
 
         @keyframes fadeInMascot {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(15px);
             }
             to {
                 opacity: 1;
@@ -393,11 +422,6 @@
                 margin: 0 auto;
             }
 
-            .hero-luxury-badge {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
             .hero-luxury-description {
                 margin-left: auto;
                 margin-right: auto;
@@ -416,18 +440,20 @@
             }
 
             .hero-luxury-mascot {
-                right: 5%;
-                bottom: 10%;
+                right: 50%;
+                transform: translateX(50%);
             }
 
             .hero-luxury-mascot img {
-                width: 140px;
+                width: 100px;
             }
         }
 
         @media (max-width: 768px) {
             .hero-luxury {
-                min-height: auto;
+                height: auto;
+                min-height: 100vh;
+                min-height: 100dvh; /* Dynamic viewport height pro mobily */
                 padding: 5rem 0 4rem;
             }
 
@@ -456,10 +482,21 @@
             .hero-luxury-proof {
                 flex-direction: column;
                 gap: 1rem;
+                text-align: center;
+            }
+
+            .hero-luxury-bottom {
+                margin-top: 2rem;
             }
 
             .hero-luxury-scroll {
-                bottom: 1rem;
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                margin-top: 2rem;
+                display: flex;
+                justify-content: center;
             }
 
             .hero-luxury-scroll-arrow {
@@ -468,7 +505,17 @@
             }
 
             .hero-luxury-mascot {
-                display: none;
+                position: relative;
+                top: auto;
+                right: auto;
+                transform: none;
+                margin: 0 auto 1rem auto;
+                display: block;
+                text-align: center;
+            }
+
+            .hero-luxury-mascot img {
+                width: 80px;
             }
         }
     </style>
@@ -692,11 +739,6 @@
         <!-- Dekorace -->
         <div class="hero-luxury-decoration"></div>
 
-        <!-- Maskot Rentmil -->
-        <div class="hero-luxury-mascot">
-            <img src="hero sekce/Maskot - Rentmil.png" alt="Rentmil maskot">
-        </div>
-
         <div class="container">
             <div class="hero-luxury-content">
                 <!-- Nadpis -->
@@ -731,8 +773,12 @@
                     </a>
                 </div>
 
-                <!-- Social proof -->
+                <!-- Social proof s maskotem -->
                 <div class="hero-luxury-proof">
+                    <!-- Maskot Rentmil - sedí na lince -->
+                    <div class="hero-luxury-mascot">
+                        <img src="hero sekce/Maskot - Rentmil.png" alt="Rentmil maskot">
+                    </div>
                     <div class="hero-luxury-google">
                         <svg viewBox="0 0 24 24">
                             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
