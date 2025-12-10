@@ -322,8 +322,8 @@
         /* Maskot Rentmil - sedí na lince nad hodnocením */
         .hero-luxury-mascot {
             position: absolute;
-            right: 0;
-            top: -130px; /* Sedí na border-top lince - větší maskot */
+            right: -100px; /* Posunut více doprava */
+            top: -130px;
             z-index: 15;
             opacity: 0;
             animation: fadeInMascot 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -331,9 +331,11 @@
         }
 
         .hero-luxury-mascot img {
-            width: 200px; /* Zvětšeno o 100% (z 100px na 200px) */
+            width: 200px;
             height: auto;
             filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.12));
+            animation: levitate 4s ease-in-out infinite;
+            animation-delay: 1.8s; /* Počká na fadeIn */
         }
 
         @keyframes fadeInMascot {
@@ -344,6 +346,15 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes levitate {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-12px);
             }
         }
 
