@@ -7,8 +7,452 @@
     <meta name="description" content="Kvalitní bazény s kompletními službami. Plastové bazény na klíč od českého výrobce. Vy zenujete, my bazénujeme - už 23 let.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ==========================================================================
+           HERO LUXURY - Fullscreen Background
+           ========================================================================== */
+
+        .hero-luxury {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-luxury-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            z-index: 1;
+        }
+
+        .hero-luxury-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            will-change: transform;
+        }
+
+        .hero-luxury-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                105deg,
+                rgba(255, 255, 255, 0.97) 0%,
+                rgba(255, 255, 255, 0.92) 35%,
+                rgba(255, 255, 255, 0.7) 55%,
+                rgba(255, 255, 255, 0.3) 75%,
+                rgba(255, 255, 255, 0.05) 100%
+            );
+            z-index: 2;
+        }
+
+        .hero-luxury::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(180deg, rgba(248, 250, 252, 0.8) 0%, transparent 100%);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .hero-luxury-decoration {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(72, 169, 166, 0.1);
+            border-radius: 50%;
+            top: -150px;
+            right: 10%;
+            z-index: 3;
+            pointer-events: none;
+            animation: floatCircle 25s ease-in-out infinite;
+        }
+
+        .hero-luxury-decoration::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(255, 134, 33, 0.08);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes floatCircle {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, 30px) rotate(10deg); }
+        }
+
+        .hero-luxury-content {
+            position: relative;
+            z-index: 10;
+            max-width: 680px;
+            padding: 2rem 0;
+        }
+
+        .hero-luxury-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 0.625rem 1.25rem;
+            background: linear-gradient(135deg, rgba(255, 134, 33, 0.08) 0%, rgba(72, 169, 166, 0.06) 100%);
+            border: 1px solid rgba(255, 134, 33, 0.15);
+            border-radius: 100px;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.1s;
+        }
+
+        .hero-luxury-badge svg {
+            color: var(--color-primary);
+        }
+
+        .hero-luxury-badge span {
+            font-family: var(--font-body);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--color-gray-700);
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .hero-luxury h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.75rem, 5.5vw, 4.25rem);
+            line-height: 1.1;
+            color: var(--color-blue-dark);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.25s;
+        }
+
+        .hero-luxury h1 .light {
+            font-weight: 300;
+            display: block;
+            color: var(--color-gray-500);
+            font-size: 0.9em;
+            margin-bottom: 0.1em;
+        }
+
+        .hero-luxury h1 strong {
+            font-weight: 700;
+            display: block;
+        }
+
+        .hero-luxury h1 .accent-line {
+            position: relative;
+            display: inline;
+        }
+
+        .hero-luxury h1 .accent-line::after {
+            content: '';
+            position: absolute;
+            bottom: 0.05em;
+            left: 0;
+            width: 100%;
+            height: 0.12em;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-blue-water));
+            opacity: 0.25;
+            border-radius: 4px;
+        }
+
+        .hero-luxury-description {
+            font-size: 1.1875rem;
+            line-height: 1.75;
+            color: var(--color-gray-600);
+            margin-bottom: 2.5rem;
+            max-width: 520px;
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.4s;
+        }
+
+        .hero-luxury-cta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.55s;
+        }
+
+        .hero-luxury-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.125rem 2.25rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--color-primary) 0%, #ff9a44 100%);
+            border-radius: 100px;
+            box-shadow:
+                0 4px 15px rgba(255, 134, 33, 0.3),
+                0 1px 3px rgba(255, 134, 33, 0.2);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-luxury-btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .hero-luxury-btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .hero-luxury-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 8px 25px rgba(255, 134, 33, 0.35),
+                0 3px 10px rgba(255, 134, 33, 0.2);
+        }
+
+        .hero-luxury-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.125rem 1.75rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--color-blue-dark);
+            text-decoration: none;
+            background: transparent;
+            border: 1.5px solid rgba(1, 56, 75, 0.15);
+            border-radius: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-luxury-btn-secondary:hover {
+            background: rgba(1, 56, 75, 0.04);
+            border-color: rgba(1, 56, 75, 0.25);
+        }
+
+        .hero-luxury-proof {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(1, 56, 75, 0.08);
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.7s;
+        }
+
+        .hero-luxury-google {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+        }
+
+        .hero-luxury-google svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .hero-luxury-google-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.125rem;
+        }
+
+        .hero-luxury-google .stars {
+            color: #FBBC05;
+            font-size: 0.875rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-luxury-google .rating {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-gray-600);
+        }
+
+        .hero-luxury-stat {
+            font-size: 0.9375rem;
+            color: var(--color-gray-500);
+        }
+
+        .hero-luxury-stat strong {
+            font-weight: 600;
+            color: var(--color-blue-dark);
+        }
+
+        .hero-luxury-since {
+            font-size: 0.875rem;
+            color: var(--color-gray-400);
+            font-style: italic;
+        }
+
+        .hero-luxury-scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 1.2s;
+        }
+
+        .hero-luxury-scroll span {
+            font-size: 0.6875rem;
+            font-weight: 500;
+            color: var(--color-gray-400);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .hero-luxury-scroll-line {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(to bottom, var(--color-gray-300), transparent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-luxury-scroll-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: var(--color-primary);
+            animation: scrollPulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0% { top: -15px; opacity: 0; }
+            20% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 1024px) {
+            .hero-luxury-overlay {
+                background: linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0.95) 0%,
+                    rgba(255, 255, 255, 0.9) 50%,
+                    rgba(255, 255, 255, 0.7) 100%
+                );
+            }
+
+            .hero-luxury-content {
+                text-align: center;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .hero-luxury-badge {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-luxury-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-luxury-cta {
+                justify-content: center;
+            }
+
+            .hero-luxury-proof {
+                justify-content: center;
+            }
+
+            .hero-luxury-decoration {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-luxury {
+                min-height: auto;
+                padding: 7rem 0 5rem;
+            }
+
+            .hero-luxury h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-luxury-description {
+                font-size: 1.0625rem;
+            }
+
+            .hero-luxury-cta {
+                flex-direction: column;
+            }
+
+            .hero-luxury-btn-primary,
+            .hero-luxury-btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-luxury-proof {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-luxury-scroll {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Top Bar -->
@@ -227,75 +671,81 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section - Luxury Fullscreen -->
+    <section class="hero-luxury">
+        <!-- Pozadí -->
+        <div class="hero-luxury-bg">
+            <img src="hero sekce/Zapuštěné bazény Rentmil .png" alt="Luxusní zapuštěný bazén" id="parallaxBg">
+        </div>
+
+        <!-- Overlay -->
+        <div class="hero-luxury-overlay"></div>
+
+        <!-- Dekorace -->
+        <div class="hero-luxury-decoration"></div>
+
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1><span class="hero-title-light">Bazény v klidu.</span><br><strong>Vy zenujete, my bazénujeme.</strong><br><strong>Už 23 let.</strong></h1>
-                    <p class="hero-description">Plastové bazény na klíč. Od nadzemních po přelivové.<br>S kompletním servisem, zastřešením i radou od mistra.</p>
-
-                    <div class="hero-features">
-                        <div class="hero-feature">
-                            <svg class="hero-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="#FF8621" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Kompletní servis</span>
-                        </div>
-                        <div class="hero-feature">
-                            <svg class="hero-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="#FF8621" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="12" cy="10" r="3" stroke="#FF8621" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Výroba v Plzni</span>
-                        </div>
-                        <div class="hero-feature">
-                            <svg class="hero-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="#FF8621" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <polyline points="9,22 9,12 15,12 15,22" stroke="#FF8621" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Showroom</span>
-                        </div>
-                    </div>
-
-                    <div class="hero-buttons">
-                        <a href="poptavka.html" class="btn btn-primary btn-large btn-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                            Nezávazná poptávka
-                        </a>
-                    </div>
-
-                    <div class="hero-proof">
-                        <div class="hero-rating">
-                            <svg class="google-icon" width="20" height="20" viewBox="0 0 24 24">
-                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                            </svg>
-                            <div class="rating-stars">
-                                <span class="stars">★★★★★</span>
-                                <span class="rating-value">4.6</span>
-                            </div>
-                        </div>
-                        <div class="hero-stats">
-                            <span>1 000+ vyrobených bazénů</span>
-                        </div>
-                        <div class="hero-since">
-                            <span>Rentmil – Bazénový mistr od roku 2002</span>
-                        </div>
-                    </div>
+            <div class="hero-luxury-content">
+                <!-- Badge -->
+                <div class="hero-luxury-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                    <span>Prémiové bazény od roku 2002</span>
                 </div>
 
-                <div class="hero-image">
-                    <div class="hero-image-wrapper">
-                        <img src="fotky/bazenovy-mistr.png" alt="Bazénový mistr u bazénu" class="hero-main-image">
+                <!-- Nadpis -->
+                <h1>
+                    <span class="light">Bazény v klidu.</span>
+                    <strong>Vy zenujete,</strong>
+                    <strong><span class="accent-line">my bazénujeme.</span></strong>
+                    <strong>Už 23 let.</strong>
+                </h1>
+
+                <!-- Popis -->
+                <p class="hero-luxury-description">
+                    Plastové bazény na klíč. Od nadzemních po přelivové.<br>
+                    S kompletním servisem, zastřešením i radou od mistra.
+                </p>
+
+                <!-- CTA -->
+                <div class="hero-luxury-cta">
+                    <a href="poptavka.html" class="hero-luxury-btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Nezávazná poptávka
+                    </a>
+                    <a href="katalog/produkt/cenik-zapustenych-bazenu.html" class="hero-luxury-btn-secondary">
+                        Zobrazit ceník
+                    </a>
+                </div>
+
+                <!-- Social proof -->
+                <div class="hero-luxury-proof">
+                    <div class="hero-luxury-google">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        <div class="hero-luxury-google-info">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating">4.6 hodnocení</span>
+                        </div>
                     </div>
+                    <span class="hero-luxury-stat"><strong>1 000+</strong> vyrobených bazénů</span>
+                    <span class="hero-luxury-since">Bazénový mistr od roku 2002</span>
                 </div>
             </div>
+        </div>
+
+        <!-- Scroll indikátor -->
+        <div class="hero-luxury-scroll">
+            <span>Scroll</span>
+            <div class="hero-luxury-scroll-line"></div>
         </div>
     </section>
 
@@ -681,5 +1131,19 @@
     </footer>
 
     <script src="scripts.js"></script>
+    <script>
+        // Parallax efekt pro hero pozadí
+        document.addEventListener('DOMContentLoaded', function() {
+            const parallaxBg = document.getElementById('parallaxBg');
+
+            if (parallaxBg) {
+                window.addEventListener('scroll', function() {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * 0.35;
+                    parallaxBg.style.transform = 'translateY(' + rate + 'px)';
+                });
+            }
+        });
+    </script>
 </body>
 </html>
